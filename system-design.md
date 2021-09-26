@@ -17,5 +17,5 @@
 
 ## ERD
 
-![alt img](/assets/erd_library.png)
+![alt img](/assets/erd-library.png)
 
