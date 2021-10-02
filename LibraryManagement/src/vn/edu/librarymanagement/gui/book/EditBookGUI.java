@@ -2,7 +2,7 @@ package vn.edu.librarymanagement.gui.book;
 
 import com.toedter.calendar.JDateChooser;
 import vn.edu.librarymanagement.bll.BookBLL;
-import vn.edu.librarymanagement.common.CommonClass;
+import vn.edu.librarymanagement.common.UtilsClass;
 import vn.edu.librarymanagement.common.Genres;
 import vn.edu.librarymanagement.common.HelperClass;
 import vn.edu.librarymanagement.dal.BookDAL;
@@ -39,7 +39,7 @@ public class EditBookGUI extends JFrame implements ActionListener {
     private BookDTO book = new BookDTO();
     private byte[] personalImg;
     private HelperClass helper = new HelperClass();
-    private CommonClass imgProcess = new CommonClass();
+    private UtilsClass imgProcess = new UtilsClass();
     private BookBLL bll = new BookBLL();
 
     public EditBookGUI() {

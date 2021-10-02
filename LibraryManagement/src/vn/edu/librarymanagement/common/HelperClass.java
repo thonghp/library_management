@@ -5,8 +5,7 @@ import javax.swing.*;
 public class HelperClass {
 
     public JLabel setNotice(String notice) {
-        JLabel lb = new JLabel("* enter the " + notice);
-        return lb;
+        return new JLabel("* enter the " + notice);
     }
 
     public boolean setDisplay(String input, JLabel lb) {

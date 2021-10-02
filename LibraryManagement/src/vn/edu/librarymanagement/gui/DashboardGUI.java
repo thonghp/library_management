@@ -1,7 +1,7 @@
 package vn.edu.librarymanagement.gui;
 
 import vn.edu.librarymanagement.gui.author.AuthorGUI;
-import vn.edu.librarymanagement.gui.book.AddBookGUI;
+import vn.edu.librarymanagement.gui.member.MemberGUI;
 
 import javax.swing.*;
 import javax.swing.border.Border;
@@ -41,7 +41,7 @@ public class DashboardGUI extends JFrame implements ActionListener {
         pnMenu.setBackground(new Color(36, 37, 42));
 
         JPanel pnLogo = new JPanel();
-        pnLogo.setBorder(new MatteBorder(0, 0, 1, 0, (Color) Color.WHITE));
+        pnLogo.setBorder(new MatteBorder(0, 0, 1, 0, Color.WHITE));
         pnLogo.setBounds(0, 0, 250, 101);
         pnMenu.add(pnLogo);
         pnLogo.setBackground(new Color(1, 50, 67));
@@ -259,30 +259,30 @@ public class DashboardGUI extends JFrame implements ActionListener {
 
         lbBookImg1 = new JLabel("");
         lbBookImg1.setHorizontalAlignment(SwingConstants.CENTER);
-        lbBookImg1.setIcon(new ImageIcon("C:\\Users\\ADMIN\\Downloads\\iconLibrary\\book_dashLogo.png"));
+        lbBookImg1.setIcon(new ImageIcon("assets/"));
         lbBookImg1.setBounds(25, 120, 150, 200);
         pnMessageBoard.add(lbBookImg1);
 
         lbBookImg2 = new JLabel("");
-        lbBookImg2.setIcon(new ImageIcon("C:\\Users\\ADMIN\\Downloads\\iconLibrary\\book_dashLogo.png"));
+        lbBookImg2.setIcon(new ImageIcon("assets/"));
         lbBookImg2.setHorizontalAlignment(SwingConstants.CENTER);
         lbBookImg2.setBounds(200, 120, 150, 200);
         pnMessageBoard.add(lbBookImg2);
 
         lbBookImg3 = new JLabel("");
-        lbBookImg3.setIcon(new ImageIcon("C:\\Users\\ADMIN\\Downloads\\iconLibrary\\book_dashLogo.png"));
+        lbBookImg3.setIcon(new ImageIcon("assets/"));
         lbBookImg3.setHorizontalAlignment(SwingConstants.CENTER);
         lbBookImg3.setBounds(375, 120, 150, 200);
         pnMessageBoard.add(lbBookImg3);
 
         lbBookImg4 = new JLabel("");
         lbBookImg4.setHorizontalAlignment(SwingConstants.CENTER);
-        lbBookImg4.setIcon(new ImageIcon("C:\\Users\\ADMIN\\Downloads\\iconLibrary\\book_dashLogo.png"));
+        lbBookImg4.setIcon(new ImageIcon("assets/"));
         lbBookImg4.setBounds(550, 120, 150, 200);
         pnMessageBoard.add(lbBookImg4);
 
         lbBookImg5 = new JLabel("");
-        lbBookImg5.setIcon(new ImageIcon("C:\\Users\\ADMIN\\Downloads\\iconLibrary\\book_dashLogo.png"));
+        lbBookImg5.setIcon(new ImageIcon("assets/"));
         lbBookImg5.setHorizontalAlignment(SwingConstants.CENTER);
         lbBookImg5.setBounds(725, 120, 150, 200);
         pnMessageBoard.add(lbBookImg5);
@@ -372,26 +372,21 @@ public class DashboardGUI extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
 
-//        if (e.getSource() == btnGenres) {
-//            dispose();
-//            new GenresGUI().setVisible(true);
-//        }
-
         if (e.getSource() == btnAuthor) {
             dispose();
             new AuthorGUI().setVisible(true);
         }
 
-        if (e.getSource() == btnBook) {
+//        if (e.getSource() == btnBook) {
+//            dispose();
+//            new BookGUI().setVisible(true);
+//        }
+
+        if (e.getSource() == btnMember) {
             dispose();
-            new AddBookGUI().setVisible(true);
+            new MemberGUI().setVisible(true);
         }
 
-//        if (e.getSource() == btnDeleteAuthor) {
-//            dispose();
-//            new DeleteAuthorGUI().setVisible(true);
-//        }
-//
 //        if (e.getSource() == btnAuthorList) {
 //            dispose();
 //            new AuthorListGUI().setVisible(true);

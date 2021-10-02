@@ -28,7 +28,7 @@ public class DeleteAuthorGUI extends JFrame implements ActionListener {
     public DeleteAuthorGUI() {
         setUndecorated(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setBounds(450, 200, 400, 200);
+        setBounds(450, 260, 400, 200);
         contentPane = new JPanel();
         contentPane.setBackground(Color.lightGray);
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));

@@ -19,8 +19,13 @@ import java.util.Date;
 public class EditAuthorGUI extends JFrame implements ActionListener {
 
     private JPanel contentPane;
-    private JTextField tfId, tfFirstName, tfLastName, tfExpertise, tfEmail;
-    private JButton btnSearch, btnEdit;
+    private JTextField tfId;
+    private JTextField tfFirstName;
+    private JTextField tfLastName;
+    private JTextField tfExpertise;
+    private JTextField tfEmail;
+    private JButton btnSearch;
+    private JButton btnEdit;
     private JLabel lbNoteId;
     private JDateChooser dateChooser;
     private JTextArea taAbout;

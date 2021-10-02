@@ -18,9 +18,14 @@ import java.util.Date;
 
 public class AddAuthorGUI extends JFrame implements ActionListener {
 
-    private JPanel contentPane;
-    private JTextField tfFirstName, tfLastName, tfExpertise, tfEmail;
-    private JLabel lbNoteFirstName, lbNoteLastName, lbNoteEmail, lbNoteExpertise;
+    private JTextField tfFirstName;
+    private JTextField tfLastName;
+    private JTextField tfExpertise;
+    private JTextField tfEmail;
+    private JLabel lbNoteFirstName;
+    private JLabel lbNoteLastName;
+    private JLabel lbNoteEmail;
+    private JLabel lbNoteExpertise;
     private JDateChooser dateChooser;
     private JTextArea taAbout;
     private JButton btnAdd;
@@ -34,7 +39,7 @@ public class AddAuthorGUI extends JFrame implements ActionListener {
         setUndecorated(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(450, 60, 400, 600);
-        contentPane = new JPanel();
+        JPanel contentPane = new JPanel();
         contentPane.setBackground(Color.lightGray);
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
         setContentPane(contentPane);

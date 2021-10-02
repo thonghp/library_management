@@ -34,7 +34,7 @@ public class AuthorDAL implements Dao<AuthorDTO> {
     @Override
     public boolean update(AuthorDTO authorDTO) throws Exception {
         String query = "update author set first_name = ?, last_name = ?, expertise = ?, about = ?, email = ?, " +
-                "date_of_birth = ?, author_status = 1 " + " where author_id = ?;";
+                "date_of_birth = ?, author_status = 1 " + " where author_id = ?";
 
         try (Connection con = ConnectionDB.getConnectionInMySQL();
              PreparedStatement ppstm = con.prepareStatement(query)) {
@@ -53,7 +53,7 @@ public class AuthorDAL implements Dao<AuthorDTO> {
 
     @Override
     public boolean delete(int id) throws Exception {
-        String query = "update author set author_status = 0 " + " where author_id = ?;";
+        String query = "update author set author_status = 0 " + " where author_id = ?";
 
         try (Connection con = ConnectionDB.getConnectionInMySQL();
              PreparedStatement ppstm = con.prepareStatement(query)) {
@@ -67,7 +67,7 @@ public class AuthorDAL implements Dao<AuthorDTO> {
     @Override
     public List<AuthorDTO> getTableData(String input) throws Exception {
         String query = (input.equals("")) ? "select * from author where author_status = 1"
-                : "select * from author where author_status = 1 and first_name like N'" + input + "%';";
+                : "select * from author where author_status = 1 and first_name like N'" + input + "%'";
 
         try (Connection con = ConnectionDB.getConnectionInMySQL();
              PreparedStatement ppstm = con.prepareStatement(query)) {
@@ -87,7 +87,7 @@ public class AuthorDAL implements Dao<AuthorDTO> {
 
     @Override
     public boolean isUsed(String input) throws Exception {
-        String query = "select * from author where email = '" + input + "';";
+        String query = "select * from author where email = '" + input + "'";
         boolean flag = false;
 
         try (Connection con = ConnectionDB.getConnectionInMySQL();
@@ -104,7 +104,7 @@ public class AuthorDAL implements Dao<AuthorDTO> {
 
     @Override
     public AuthorDTO findById(String id) throws Exception {
-        String query = "select * from author where author_id = ?;";
+        String query = "select * from author where author_id = ?";
 
         try (Connection con = ConnectionDB.getConnectionInMySQL();
              PreparedStatement ppstm = con.prepareStatement(query)) {
@@ -114,8 +114,7 @@ public class AuthorDAL implements Dao<AuthorDTO> {
             try (ResultSet rs = ppstm.executeQuery()) {
 
                 if (rs.next()) {
-                    AuthorDTO s = setValue(rs);
-                    return s;
+                    return setValue(rs);
                 }
             }
 

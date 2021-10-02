@@ -1,6 +1,6 @@
 package vn.edu.librarymanagement.gui.author;
 
-import vn.edu.librarymanagement.common.CommonClass;
+import vn.edu.librarymanagement.common.UtilsClass;
 import vn.edu.librarymanagement.dal.AuthorDAL;
 import vn.edu.librarymanagement.dto.AuthorDTO;
 import vn.edu.librarymanagement.gui.DashboardGUI;
@@ -19,14 +19,20 @@ public class AuthorGUI extends JFrame implements ActionListener {
 
     private JPanel contentPane;
     private JTextField tfName;
-    private JButton btnSearch, btnAdd, btnEdit, btnDelete;
+    private JButton btnSearch;
+    private JButton btnAdd;
+    private JButton btnEdit;
+    private JButton btnDelete;
     private JTable table;
-    private JLabel lbGetName, lbGetExpertise, lbGetEmail, lbGetDateOfBirth;
+    private JLabel lbGetName;
+    private JLabel lbGetExpertise;
+    private JLabel lbGetEmail;
+    private JLabel lbGetDateOfBirth;
 
     private AuthorDTO author = new AuthorDTO();
     private AuthorDAL dao = new AuthorDAL();
     private DefaultTableModel model;
-    private CommonClass common = new CommonClass();
+    private UtilsClass common = new UtilsClass();
 
     public AuthorGUI() {
         setUndecorated(true);
@@ -185,10 +191,10 @@ public class AuthorGUI extends JFrame implements ActionListener {
         table.getColumnModel().getColumn(3).setMaxWidth(70);
         table.getColumnModel().getColumn(4).setPreferredWidth(130);
         table.getColumnModel().getColumn(4).setMaxWidth(130);
-        table.getColumnModel().getColumn(5).setPreferredWidth(100);
-        table.getColumnModel().getColumn(5).setMaxWidth(100);
-        table.getColumnModel().getColumn(6).setPreferredWidth(170);
-        table.getColumnModel().getColumn(6).setMaxWidth(170);
+        table.getColumnModel().getColumn(5).setPreferredWidth(150);
+        table.getColumnModel().getColumn(5).setMaxWidth(150);
+        table.getColumnModel().getColumn(6).setPreferredWidth(120);
+        table.getColumnModel().getColumn(6).setMaxWidth(120);
     }
 
     private void loadDataToTable(String input) {

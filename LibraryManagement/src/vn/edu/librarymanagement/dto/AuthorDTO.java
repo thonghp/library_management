@@ -2,7 +2,12 @@ package vn.edu.librarymanagement.dto;
 
 public class AuthorDTO {
     private int id;
-    private String firstName, lastName, expertise, about, email, dateOfBirth;
+    private String firstName;
+    private String lastName;
+    private String expertise;
+    private String about;
+    private String email;
+    private String dateOfBirth;
 
     public AuthorDTO() {
     }

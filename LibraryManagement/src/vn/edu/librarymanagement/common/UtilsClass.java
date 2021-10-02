@@ -2,7 +2,7 @@ package vn.edu.librarymanagement.common;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
-import javax.swing.table.TableColumnModel;
+import javax.swing.filechooser.FileFilter;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayInputStream;
@@ -10,16 +10,15 @@ import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
 
-public class CommonClass {
+public class UtilsClass {
 
-    public final static String JPEG = "jpeg";
-    public final static String JPG = "jpg";
-    public final static String GIF = "gif";
-    public final static String PNG = "png";
+    public static final String JPEG = "jpeg";
+    public static final String JPG = "jpg";
+    public static final String GIF = "gif";
+    public static final String PNG = "png";
 
     public Image resizeImage(Image originalImage, int targetWidth, int targetHeight) {
-        Image resultingImage = originalImage.getScaledInstance(targetWidth, targetHeight, Image.SCALE_SMOOTH);
-        return resultingImage;
+        return originalImage.getScaledInstance(targetWidth, targetHeight, Image.SCALE_SMOOTH);
     }
 
     public byte[] convertImageToByteArray(Image img, String type) throws IOException {
@@ -31,17 +30,15 @@ public class CommonClass {
 
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         ImageIO.write(bi, type, baos);
-        byte[] imgByte = baos.toByteArray();
 
-        return imgByte;
+        return baos.toByteArray();
     }
 
     public Image convertByteArrayToImage(byte[] array, String type) throws IOException {
         ByteArrayInputStream bais = new ByteArrayInputStream(array);
         BufferedImage bi = ImageIO.read(bais);
 
-        Image img = bi.getScaledInstance(bi.getWidth(), bi.getHeight(), Image.SCALE_SMOOTH);
-        return img;
+        return bi.getScaledInstance(bi.getWidth(), bi.getHeight(), Image.SCALE_SMOOTH);
     }
 
     public String getImageExtension(File f) {
@@ -66,10 +63,30 @@ public class CommonClass {
         table.getTableHeader().setFont(new Font("Tahoma", Font.BOLD, 13));
     }
 
-    public void setColumnWidth(JTable table, int columnIndex, int width) {
-        TableColumnModel columnModel = table.getColumnModel();
-        columnModel.getColumn(columnIndex).setPreferredWidth(width);
+    //    public void setColumnWidth(JTable table, int columnIndex, int width) {
+//        TableColumnModel columnModel = table.getColumnModel();
+//        columnModel.getColumn(columnIndex).setPreferredWidth(width);
+//    }
+    public void getFilter() {
+        FileFilter filter = new FileFilter() {
+            @Override
+            public boolean accept(File f) {
+                if (f.isDirectory()) {
+                    return true;
+                }
+
+                String extension = getImageExtension(f);
+                if (extension != null) {
+                    return extension.equals(GIF) || extension.equals(JPG) ||
+                            extension.equals(JPEG) || extension.equals(PNG);
+                }
+                return false;
+            }
+
+            @Override
+            public String getDescription() {
+                return "Just Images";
+            }
+        };
     }
-
-
 }
